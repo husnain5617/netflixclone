@@ -1,0 +1,191 @@
+$bg: #101010;
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: $bg;
+
+    @media screen and (max-width: 769px) {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .navbar-links {
+            display: none;
+        }
+
+        .navbar-toggle {
+            display: block;
+            margin-top: 1rem;
+        }
+    }
+
+    .navbar-links {
+        display: flex;
+
+        a {
+            margin-right: 1rem;
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .navbar-toggle {
+        display: none;
+        cursor: pointer;
+        color: white;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.banner {
+    height: 420px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    justify-content: space-evenly;
+
+    @media screen and (max-width: 768px) {
+        height: 300px;
+
+        h1 {
+            font-size: 1.5rem;
+            bottom: 20px;
+            left: 10px;
+        }
+
+        p {
+            bottom: 100px;
+            left: 10px;
+            font-size: 0.8rem;
+            max-width: 80%;
+        }
+
+        .banner-buttons {
+            bottom: 50px;
+            left: 10px;
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        height: 300px;
+
+        h1 {
+            display: none;
+        }
+
+
+        p {
+            display: none;
+
+        }
+
+        .banner-buttons {
+            bottom: 45px;
+            left: 10px;
+        }
+    }
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: 0.2;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    }
+
+    h1 {
+        position: absolute;
+        bottom: 320px;
+        left: 20px;
+        font-size: 2rem;
+        background-color: transparent;
+    }
+
+    p {
+        background-color: transparent;
+        position: absolute;
+        bottom: 200px;
+        left: 20px;
+        text-wrap: wrap;
+        font-size: 1rem;
+        max-width: 40%;
+    }
+}
+
+.banner-buttons {
+    position: absolute;
+    bottom: 100px;
+    left: 20px;
+
+    >.site-button {
+        padding: 10px 20px;
+        margin-right: 10px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+.row {
+    background: $bg;
+    padding: 2.5rem;
+
+    >div {
+        justify-content: start;
+        display: flex;
+        overflow-x: auto;
+    }
+}
+
+.card {
+    width: 200px;
+    height: 220px;
+    margin: 0.2rem;
+    cursor: pointer;
+    transition: transform 0.5s;
+
+    &:hover {
+        transform: translateY(-10px) scale(1.05);
+    }
+}
+
+.generbox {
+    overflow-x: auto;
+    display: flex;
+    background: $bg;
+    height: 100px;
+
+    >a {
+        padding: 1rem;
+        margin: 1rem;
+        color: black;
+        border-radius: 5px;
+        min-width: 8rem;
+        justify-content: center;
+        align-items: center;
+        background-color: whitesmoke;
+
+        &:hover {
+            background-color: rgb(230, 230, 230);
+        }
+    }
+}
